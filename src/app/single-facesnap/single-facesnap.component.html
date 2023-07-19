@@ -1,7 +1,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-<div class="facesnapcard" [ngClass]="{'snapped': buttonText === 'Oups Un Snap!!!' }">
+<div class="facesnapcard" *ngIf="faceSnap$ | async as facesnap"  [ngClass]="{'snapped': buttonText === 'Oups Un Snap!!!' }">
   <a routerLink="/facesnaplist">Back</a>
   <h2>{{facesnap.title | uppercase}}</h2>
   <p>Mis en ligne le {{facesnap.createdDate | date: 'd MMMM yyyy, a HH:mm'}}</p>
@@ -9,6 +9,6 @@
   <p>{{facesnap.description}}</p>
   <p *ngIf="facesnap.location">Photo prise a {{facesnap.location}}</p>
 
-  <button  (click)="onAddSnap()">{{buttonText}}</button>
+  <button  (click)="onAddSnap(facesnap.id)">{{buttonText}}</button>
   <span [ngStyle]="{ color: 'rgb(0,'+facesnap.snaps+',0)'}">{{facesnap.snaps}}</span>
 </div>

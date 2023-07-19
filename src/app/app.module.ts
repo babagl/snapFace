@@ -10,6 +10,9 @@ import { HeaderComponent } from './header/header.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleFacesnapComponent } from './single-facesnap/single-facesnap.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NewFaceSnapComponent } from './new-face-snap/new-face-snap.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,11 +21,15 @@ import { SingleFacesnapComponent } from './single-facesnap/single-facesnap.compo
     FaceSnapListComponent,
     HeaderComponent,
     LandingPageComponent,
-    SingleFacesnapComponent
+    SingleFacesnapComponent,
+    NewFaceSnapComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     {
