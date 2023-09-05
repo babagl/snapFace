@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {FaceSnap} from "../face-snap/model/face-snap.model";
+import {FaceSnap} from "../model/face-snap.model";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable, switchMap} from "rxjs";
 
